@@ -6,6 +6,7 @@ RUN apk add --update --no-cache openssh \
     && passwd -d root
 
 COPY ./entrypoint.sh /
+COPY ./authorized_keys /root/.ssh/authorized_keys
 
 EXPOSE 22
 

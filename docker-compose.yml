@@ -4,8 +4,6 @@ services:
     image: limingxinleo/openssh-server
     build:
       context: "."
-    volumes:
-      - ./authorized_keys:/root/.ssh/authorized_keys
     ports:
       - "2222:22"
     restart: always
