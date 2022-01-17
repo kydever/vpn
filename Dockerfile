@@ -2,7 +2,7 @@ FROM alpine:3.15
 
 LABEL maintainer="limx <l@hyperf.io>" version="1.0" license="MIT" app.name="ssh-server"
 
-RUN apk add --update --no-cache openssh \
+RUN apk add --update --no-cache openssh tzdata \
     && passwd -d root \
     && ssh-keygen -A \
     && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
