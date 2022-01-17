@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  openssh-server:
+    image: lscr.io/linuxserver/openssh-server
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
+      - PUBLIC_KEY_DIR=/pubkeys
+      - SUDO_ACCESS=true
+    volumes:
+      - ./pubkeys:/pubkeys
+    ports:
+      - 2222:2222
+    restart: always
