@@ -4,6 +4,8 @@ services:
     image: limingxinleo/openssh-server
     build:
       context: "."
+      args:
+        ROOT_PASSWORD: ${ROOT_PASSWORD}
     ports:
       - "2222:22"
     restart: always

@@ -1,2 +1,3 @@
 authorized_keys
 frpc.ini
+.env
