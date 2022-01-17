@@ -12,7 +12,7 @@ services:
     networks:
       - default-network
   frpc:
-    image: fatedier/frps:v0.38.0
+    image: fatedier/frpc:v0.38.0
     command: '-c /frpc.ini'
     volumes:
       - ./frpc.ini:/frpc.ini
