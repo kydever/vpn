@@ -17,3 +17,4 @@ services:
       - default-network
 networks:
   default-network:
+    external: true
