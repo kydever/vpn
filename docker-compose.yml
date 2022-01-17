@@ -1,17 +1,13 @@
 version: "3.7"
 services:
   openssh-server:
-    image: lscr.io/linuxserver/openssh-server
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Asia/Shanghai
-      - PUBLIC_KEY_DIR=/pubkeys
-      - SUDO_ACCESS=true
+    image: limingxinleo/openssh-server
+    build:
+      context: "."
     volumes:
-      - ./pubkeys:/pubkeys
+      - ./authorized_keys:/root/.ssh/authorized_keys
     ports:
-      - 2222:2222
+      - "2222:22"
     restart: always
     networks:
       - default-network
