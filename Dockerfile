@@ -11,7 +11,6 @@ RUN apk add --update --no-cache openssh tzdata \
     && sed -i "s/#PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config \
     && echo "root:${ROOT_PASSWORD:-'root'}" | chpasswd
 
-COPY ./entrypoint.sh /
 COPY ./authorized_keys /root/.ssh/authorized_keys
 
 EXPOSE 22
